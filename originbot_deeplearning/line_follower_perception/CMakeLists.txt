@@ -43,6 +43,8 @@ find_package(geometry_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(hobot_cv REQUIRED)
 
+include_directories(/usr/include/opencv4)
+
 link_directories(
   ${CMAKE_SYSROOT}/usr/lib/hbbpu/
   /usr/hobot/lib

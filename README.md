@@ -151,3 +151,5 @@ echo $DISPLAY
 
 # tros
 https://developer.d-robotics.cc/rdk_doc/Robot_development/quick_start/install_tros
+
+
