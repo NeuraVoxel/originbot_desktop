@@ -139,3 +139,15 @@ We sincerely invite developers to participate in the OriginBot project. There ar
 - If you are interested in OriginBot, feel free to star the project's source code repository or share it with developers who might need it;
 
 - If you develop more interesting features or robots based on the OriginBot open-source project, feel free to share them in the [community forum](https://guyuehome.com/Bubble/circleDetail/id/95). Outstanding projects will also be promoted in the community.
+
+
+# 在宿主机上授权 X11 连接
+在宿主机（运行Docker的机器）的终端中执行以下命令，允许来自本地容器的连接
+
+```
+xhost +local:docker
+echo $DISPLAY
+```
+
+# tros
+https://developer.d-robotics.cc/rdk_doc/Robot_development/quick_start/install_tros
