@@ -153,3 +153,29 @@ echo $DISPLAY
 https://developer.d-robotics.cc/rdk_doc/Robot_development/quick_start/install_tros
 
 
+# ROS2 Launch 
+1. 基本概念
+什么是 Launch 文件
+Launch 文件用于描述和配置要启动的 ROS2 节点集合，可以：
+同时启动多个节点
+设置节点参数
+配置节点命名空间和重映射
+设置环境变量
+定义节点间的依赖关系
+主要文件格式
+Python Launch 文件(*.launch.py) - 推荐使用
+XML Launch 文件(*.launch.xml)
+YAML Launch 文件(*.launch.yaml)
+2. Python Launch 文件结构
+基本模板
+```
+from launch import LaunchDescription
+from launch_ros.actions import Node
+from launch.actions import ExecuteProcess, TimerAction
+from launch.substitutions import FindExecutable
+
+def generate_launch_description():
+    return LaunchDescription([
+        # 在这里添加要启动的节点和动作
+    ])
+```
