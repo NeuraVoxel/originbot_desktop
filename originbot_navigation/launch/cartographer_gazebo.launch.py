@@ -40,7 +40,7 @@ def generate_launch_description():
     # rviz可视化显示的配置文件路径
     rviz_config_dir = os.path.join(navigation2_dir, 'rviz')+"/slam.rviz"
  
- ################ 启动节点：cartographer_node、cartographer_occupancy_grid_node、rviz2 ###################
+ ################ 启动节点：cartographer_node、occupancy_grid_node、rviz2 ###################
     cartographer_node = Node(
         package='cartographer_ros',
         executable='cartographer_node',
@@ -50,10 +50,10 @@ def generate_launch_description():
         arguments=['-configuration_directory', configuration_directory,
                    '-configuration_basename', configuration_basename])
 
-    cartographer_occupancy_grid_node = Node(
+    occupancy_grid_node = Node(
         package='cartographer_ros',
-        executable='cartographer_occupancy_grid_node',
-        name='cartographer_occupancy_grid_node',
+        executable='occupancy_grid_node',
+        name='occupancy_grid_node',
         output='screen',
         parameters=[{'use_sim_time': use_sim_time}],
         arguments=['-resolution', resolution, '-publish_period_sec', publish_period_sec])
@@ -68,7 +68,7 @@ def generate_launch_description():
         
     ld = LaunchDescription()
     ld.add_action(cartographer_node)
-    ld.add_action(cartographer_occupancy_grid_node)
+    ld.add_action(occupancy_grid_node)
     ld.add_action(rviz_node)
 
     return ld
