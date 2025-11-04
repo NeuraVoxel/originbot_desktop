@@ -149,6 +149,19 @@ xhost +local:docker
 echo $DISPLAY
 ```
 
+# ros2 foxy
+安装 CycloneDDS
+```
+# 更新软件包列表
+sudo apt update
+
+# 安装 CycloneDDS RMW 实现
+sudo apt install ros-foxy-rmw-cyclonedds-cpp
+
+# 验证安装
+ldconfig -p | grep cyclonedds
+```
+
 # tros
 https://developer.d-robotics.cc/rdk_doc/Robot_development/quick_start/install_tros
 
